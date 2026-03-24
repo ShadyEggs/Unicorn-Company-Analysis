@@ -308,7 +308,57 @@ companies.shape     # Rows/columns count
 companies.size      # Dataset largeness
 companies.info()    # Dtypes, NULL factors, dataset integrity
 </pre></details>
-<div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
+
+<div class="results">
+<strong>Results:</strong>
+
+<p><strong>head(5):</strong></p>
+
+<div style="overflow-x:auto;">
+<table class="df-table">
+<thead>
+<tr>
+<th></th><th>Company</th><th>Valuation</th><th>Date Joined</th><th>Industry</th><th>City</th><th>Country/Region</th><th>Continent</th><th>Year Founded</th><th>Funding</th><th>Select Investors</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>shape:</strong></p>
+<pre>(1074, 10)</pre>
+
+<p><strong>size:</strong></p>
+<pre>10740</pre>
+
+<p><strong>info():</strong></p>
+<pre>
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1074 entries, 0 to 1073
+Data columns (total 10 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   Company           1074 non-null   object
+ 1   Valuation         1074 non-null   object
+ 2   Date Joined       1074 non-null   object
+ 3   Industry          1074 non-null   object
+ 4   City              1058 non-null   object
+ 5   Country/Region    1074 non-null   object
+ 6   Continent         1074 non-null   object
+ 7   Year Founded      1074 non-null   int64 
+ 8   Funding           1074 non-null   object
+ 9   Select Investors  1073 non-null   object
+dtypes: int64(1), object(9)
+memory usage: 84.0+ KB
+</pre>
+</div>
+
 </div>
 </div>
 <div class="subsection-summary">
@@ -323,7 +373,57 @@ companies.info()    # Dtypes, NULL factors, dataset integrity
 <p>For this part of the analysis, the data is prepared by converting date fileds to datetime format and engineering a monthly feature to support a time-based analysis.</p>
 <details><summary>View Code</summary><pre>pd.to_datetime()
 .dt.month</p></pre></details>
-<div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
+
+<div class="results">
+<strong>Results:</strong>
+
+<p><strong>head(5):</strong></p>
+
+<div style="overflow-x:auto;">
+<table class="df-table">
+<thead>
+<tr>
+<th></th><th>Company</th><th>Valuation</th><th>Date Joined</th><th>Industry</th><th>City</th><th>Country/Region</th><th>Continent</th><th>Year Founded</th><th>Funding</th><th>Select Investors</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>shape:</strong></p>
+<pre>(1074, 10)</pre>
+
+<p><strong>size:</strong></p>
+<pre>10740</pre>
+
+<p><strong>info():</strong></p>
+<pre>
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1074 entries, 0 to 1073
+Data columns (total 10 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   Company           1074 non-null   object
+ 1   Valuation         1074 non-null   object
+ 2   Date Joined       1074 non-null   object
+ 3   Industry          1074 non-null   object
+ 4   City              1058 non-null   object
+ 5   Country/Region    1074 non-null   object
+ 6   Continent         1074 non-null   object
+ 7   Year Founded      1074 non-null   int64 
+ 8   Funding           1074 non-null   object
+ 9   Select Investors  1073 non-null   object
+dtypes: int64(1), object(9)
+memory usage: 84.0+ KB
+</pre>
+</div>
+
 </div>
 </div>
 <div class="subsection-summary">
@@ -339,7 +439,57 @@ companies.info()    # Dtypes, NULL factors, dataset integrity
 <details><summary>View Code</summary><pre>groupby()
 sum()
 sort_values()</pre></details>
-<div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
+
+<div class="results">
+<strong>Results:</strong>
+
+<p><strong>head(5):</strong></p>
+
+<div style="overflow-x:auto;">
+<table class="df-table">
+<thead>
+<tr>
+<th></th><th>Company</th><th>Valuation</th><th>Date Joined</th><th>Industry</th><th>City</th><th>Country/Region</th><th>Continent</th><th>Year Founded</th><th>Funding</th><th>Select Investors</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>shape:</strong></p>
+<pre>(1074, 10)</pre>
+
+<p><strong>size:</strong></p>
+<pre>10740</pre>
+
+<p><strong>info():</strong></p>
+<pre>
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1074 entries, 0 to 1073
+Data columns (total 10 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   Company           1074 non-null   object
+ 1   Valuation         1074 non-null   object
+ 2   Date Joined       1074 non-null   object
+ 3   Industry          1074 non-null   object
+ 4   City              1058 non-null   object
+ 5   Country/Region    1074 non-null   object
+ 6   Continent         1074 non-null   object
+ 7   Year Founded      1074 non-null   int64 
+ 8   Funding           1074 non-null   object
+ 9   Select Investors  1073 non-null   object
+dtypes: int64(1), object(9)
+memory usage: 84.0+ KB
+</pre>
+</div>
+
 </div>
 </div>
 <div class="subsection-summary">
@@ -353,7 +503,57 @@ sort_values()</pre></details>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>[Code Here]</pre></details>
-<div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
+
+<div class="results">
+<strong>Results:</strong>
+
+<p><strong>head(5):</strong></p>
+
+<div style="overflow-x:auto;">
+<table class="df-table">
+<thead>
+<tr>
+<th></th><th>Company</th><th>Valuation</th><th>Date Joined</th><th>Industry</th><th>City</th><th>Country/Region</th><th>Continent</th><th>Year Founded</th><th>Funding</th><th>Select Investors</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>shape:</strong></p>
+<pre>(1074, 10)</pre>
+
+<p><strong>size:</strong></p>
+<pre>10740</pre>
+
+<p><strong>info():</strong></p>
+<pre>
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1074 entries, 0 to 1073
+Data columns (total 10 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   Company           1074 non-null   object
+ 1   Valuation         1074 non-null   object
+ 2   Date Joined       1074 non-null   object
+ 3   Industry          1074 non-null   object
+ 4   City              1058 non-null   object
+ 5   Country/Region    1074 non-null   object
+ 6   Continent         1074 non-null   object
+ 7   Year Founded      1074 non-null   int64 
+ 8   Funding           1074 non-null   object
+ 9   Select Investors  1073 non-null   object
+dtypes: int64(1), object(9)
+memory usage: 84.0+ KB
+</pre>
+</div>
+
 </div>
 </div>
 <div class="subsection-summary">
