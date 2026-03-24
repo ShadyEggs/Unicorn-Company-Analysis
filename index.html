@@ -326,8 +326,8 @@ companies.head(5)   # A brief overview (5 rows)
 companies.shape     # Rows/columns count
 companies.size      # Dataset largeness
 companies.info()    # Dtypes, NULL factors, dataset integrity
+companies.describe()  # Descriptive statistics
 </pre></details>
-<div class="results">
 <div class="results">
 
   <h4 class="results-header">Data Preview (head)</h4>
@@ -380,6 +380,26 @@ dtypes: int64(1), object(9)
 memory usage: 84.0+ KB
   </pre>
 
+
+<h4 class="results-header">Year Founded Summary</h4>
+
+<div style="overflow-x:auto;">
+  <table class="df-table enhanced">
+    <thead>
+      <tr><th></th><th>Year Founded</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>count</td><td>1074.000000</td></tr>
+      <tr><td>mean</td><td>2012.895717</td></tr>
+      <tr><td>std</td><td>5.698573</td></tr>
+      <tr><td>min</td><td>1919.000000</td></tr>
+      <tr><td>25%</td><td>2011.000000</td></tr>
+      <tr><td>50%</td><td>2014.000000</td></tr>
+      <tr><td>75%</td><td>2016.000000</td></tr>
+      <tr><td>max</td><td>2021.000000</td></tr>
+    </tbody>
+  </table>
+</div>
 </div>
 </div>
 </div>
@@ -393,9 +413,14 @@ memory usage: 84.0+ KB
 <div class="subsection">
 <div class="subsection-header">Data Preparation & Feature Engineering</div>
 <div class="subsection-content">
-<p>For this part of the analysis, the data is prepared by converting date fileds to datetime format and engineering a monthly feature to support a time-based analysis.</p>
-<details><summary>View Code</summary><pre>pd.to_datetime()
-.dt.month</p></pre></details>
+<p>For this part of the analysis, the data is prepared by converting date fileds to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
+<details><summary>View Code</summary><pre>
+  # Convert to datetime (<code>companies.info()</code> to check)
+  companies['Date Joined'] = pd.to_datetime(companies['Date Joined'])
+
+  # Creating 'Year Joined' column
+  companies['Year Joined'] = companies['Date Joined'].dt.year      # <code>companies.head(5)</code> again to check
+</p></pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
