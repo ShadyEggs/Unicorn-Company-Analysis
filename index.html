@@ -58,7 +58,7 @@ details {
   padding: 10px;
 }
 
-summary { cursor: pointer; color: #9aaaff; }
+summary { cursor: pointer; }
 
 .controls {
   display: flex;
@@ -181,6 +181,50 @@ body.light-mode a {
   color: #2f5fd0;
 }
 
+
+/* =========================
+   TEAL UTILITY SYSTEM
+========================= */
+
+/* Back to Portfolio */
+.back-link {
+  color: #2dd4bf;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  color: #14b8a6;
+}
+
+/* View Code */
+details summary {
+  color: #2dd4bf;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+details summary:hover {
+  color: #14b8a6;
+}
+
+/* LIGHT MODE ADJUSTMENT */
+body.light-mode .back-link,
+body.light-mode details summary {
+  color: #0d9488;
+}
+
+body.light-mode .back-link:hover,
+body.light-mode details summary:hover {
+  color: #0f766e;
+}
+
+/* Smooth transitions */
+.back-link,
+details summary {
+  transition: color 0.2s ease;
+}
+
 </style>
 </head>
 
@@ -188,7 +232,7 @@ body.light-mode a {
 <div class="container">
 
 <div style="margin-bottom:20px;">
-  <a href="https://shadyeggs.github.io/" style="color:#9aaaff; text-decoration:none;">
+  <a href="https://shadyeggs.github.io/" class="back-link">
     ← Back to Portfolio
   </a>
 </div>
