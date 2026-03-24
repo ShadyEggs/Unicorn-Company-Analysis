@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>[Insert Text]</title>
+<title>Unicorn Company Analysis</title>
 
 <style>
 body {
@@ -237,7 +237,7 @@ details summary {
   </a>
 </div>
 
-<h1>[Insert Text]</h1>
+<h1>Unicorn Company Analysis (EDA with Python)</h1>
 
 
 <div class="controls" style="gap:10px; align-items:center;">
@@ -269,12 +269,12 @@ details summary {
 
 <h2>Project Background</h2>
 <div class="collapsible-content">
-  <p>[Insert Text]</p>
+  <p>The data used for this project provides information on over 1,000 unicorn companies, companies valued at over one billion dollars. Features in this dataset for each company include, among others, their industry, country, year founded, and select investors. When and how these companies reached unicorn status, a prestigious milestone, can provide valuable insight for investing firms, for example, deciding which companies to invest in next.  </p>
 </div>
 
 <h2>Project Goal</h2>
 <div class="collapsible-content">
-  <p>[Insert Text]</p>
+  <p>The objective of this project will be to analyze unicorn company data to understand how valuation and growth timelines vary across industries, and generate insights to support investment decision-making.</p>
 </div>
 
 <div class="section">
@@ -285,8 +285,26 @@ details summary {
 <div class="subsection">
 <div class="subsection-header">Data Loading & Inspection</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<p>
+  Loading <code>Unicorn_Companies.csv</code>
+  <code>matplotlib</code> - used for data visualization
+  <code>Pandas</code> - used to manipulate, structure, and handle the data
+  
+Loading the dataset and performing initial inspection to understand structure, size, and data types using pandas.
+</p>
+<details><summary>View Code</summary><pre>
+# Importing
+import pandas as pd
+import matplotlib.pyplot as plt
+  
+# Loading
+companies = pd.read_csv("Unicorn_Companies.csv")
+
+# Inspection
+companies.head(5)
+companies.shape
+companies.info()
+</pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
@@ -297,10 +315,11 @@ details summary {
 
 <!-- SECTION 2 -->
 <div class="subsection">
-<div class="subsection-header">Data Cleaning</div>
+<div class="subsection-header">Data Preparation & Feature Engineering</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<details><summary>View Code</summary><pre>pd.to_datetime()
+.dt.month</p></pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
@@ -311,10 +330,12 @@ details summary {
 
 <!-- SECTION 3 -->
 <div class="subsection">
-<div class="subsection-header">Feature Engineering</div>
+<div class="subsection-header">Aggregation & Analysis</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<details><summary>View Code</summary><pre>groupby()
+sum()
+sort_values()</pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
@@ -325,7 +346,7 @@ details summary {
 
 <!-- SECTION 4 -->
 <div class="subsection">
-<div class="subsection-header">Visualization & Analysis</div>
+<div class="subsection-header">Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>[Code Here]</pre></details>
