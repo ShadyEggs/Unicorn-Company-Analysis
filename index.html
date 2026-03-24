@@ -288,6 +288,8 @@ details summary {
 <p>Loading <code>Unicorn_Companies.csv</code></p>
 <p><code>matplotlib</code> - used for data visualization</p>
 <p><code>Pandas</code> - used to manipulate, structure, and handle the data</p>
+
+<strong>note</strong>   Datetime operations were performed using pandas' built-in datetime tools (<code>pd.to_datetime, .dt)</code>.
   
 Loading the dataset and performing an initial inspection to understand structure, size, and data types using pandas.
 </p>
@@ -316,7 +318,7 @@ companies.info()    # Dtypes, NULL factors, dataset integrity
 <div class="subsection">
 <div class="subsection-header">Data Preparation & Feature Engineering</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
+<p>For this part of the analysis, the data is prepared by converting date fileds to datetime format and engineering a monthly feature to support a time-based analysis.</p>
 <details><summary>View Code</summary><pre>pd.to_datetime()
 .dt.month</p></pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
