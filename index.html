@@ -458,7 +458,6 @@ memory usage: 84.0+ KB
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>Highlighted during the preliminary analysis, the <code>Date Joined</code> column is converted from an object type to a datetime format, supporting more effective time-based analysis. A quick verification using <code>companies.info()</code> confirms that the conversion was successfully applied.</p><p><strong><code>Year Joined</code></strong>, a new feature, is engineered by extracting the year component from the datetime column. Comparisons between when companies were founded and when they achieved unicorn status is simplified with this transformation, further supporting trend analysis and visualization.</p></div>
-
 </div>
 <!-- SECTION 3 -->
 <div class="subsection">
@@ -583,7 +582,7 @@ mix-blend-mode:normal;
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>Technology driven industries dominate maximum unicorn valuations within this sample, further suggesting that high-value companies are likely driven by factors like rapid innovation and scalability.</p>
-<p>Internet software & services and data management & analytics also show substantial valuations, indicating solid growth potential and demand while industries like consumer & retail and auto & transportation appear toward the lower end.</p>
+<p>Internet software &amp; services and data management &amp; analytics also show substantial valuations, indicating solid growth potential and demand while industries like consumer &amp; retail and auto &amp; transportation appear toward the lower end.</p>
 <p>Overall, the maximum valuation bar chart further strengthens the trend that technology driven industries dominate the upper range, reinforcing the impact of industry specific dyamics.</p></div>
 </div>
 </div>
@@ -592,12 +591,9 @@ mix-blend-mode:normal;
 <h2 id="project-overview" style="padding-left:0; cursor:default;">Project Overview</h2>
 <div class="collapsible-content">
 <p>This project explores a dataset of over 1,000 unicorn companies to better understand how growth timelines and valuations vary across industries. Analysis begins with data inspection, cleaning and transformation including converting key fields such as <code>Date Joined</code> into a usable datetime format as well as engineering new features like <code>Year Joined</code> to support time based analysis.</p>
-<p>From preliminary inspection, the focus shifts to exploring how long companies take to reach unicorn status by calculating a time to unicorn metric and analyzing the distribution across industries. Results from sampled data indicate that industries such as artifical intelligence and auto & transportation reach unicorn status more quickly while others take longer.</p>
+<p>From preliminary inspection, the focus shifts to exploring how long companies take to reach unicorn status by calculating a time to unicorn metric and analyzing the distribution across industries. Results from sampled data indicate that industries such as artifical intelligence and auto &amp; transportation reach unicorn status more quickly while others take longer.</p>
 <p>Further analysis explores maximum valuations by industry revealing that artificial and fintech industries dominate the upper range of valuations. Findings indicate both growth speed (time to unicorn) and valuation are unevenly distributed, highlighting the strength of industry dynamic influences such as scalability and demand.</p>
-  <p>What can be recommended:
-       - Clearly indentifying industries that align with the firm's investment strategy (high growth vs high valuation or both?)
-       - After identifying key industries, filtering the dataset to include only companies within those sectors to further meaningful comparisons
-       - Comparing high valuations against lower number of investors could indicate growth potential or untapped opportunity</p>
+<p>What can be recommended:</p><ul><li>Clearly indentifying industries that align with the firm's investment strategy (high growth vs high valuation or both?)</li><li>After identifying key industries, filtering the dataset to include only companies within those sectors to further meaningful comparisons</li><li>Comparing high valuations against lower number of investors could indicate growth potential or untapped opportunity</li></ul>
 </div>
 </div>
 <script>
