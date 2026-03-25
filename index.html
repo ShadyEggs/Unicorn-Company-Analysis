@@ -468,7 +468,7 @@ memory usage: 84.0+ KB
     companies_sampled['Date Joined'].dt.year - companies_sampled['Year Founded']
   )
 
-  # Aggregate data by Industry
+  # Aggregate <code>time_to_unicorn</code> by <code>Industry</code>
   industry_max = (
     companies_sampled
     .groupby('Industry')['time_to_unicorn']
