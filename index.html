@@ -416,7 +416,7 @@ memory usage: 84.0+ KB
 <div class="subsection">
 <div class="subsection-header">Data Preparation & Feature Engineering</div>
 <div class="subsection-content">
-<p>For this part of the analysis, the data is prepared by converting date fileds to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
+<p>For this part of the analysis, the data is prepared by converting <code>Date Joined</code> to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
 <details><summary>View Code</summary><pre>
   # Convert to datetime
   companies['Date Joined'] = pd.to_datetime(companies['Date Joined'])
