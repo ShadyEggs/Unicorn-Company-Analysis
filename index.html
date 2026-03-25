@@ -456,7 +456,7 @@ memory usage: 84.0+ KB
 </div>
 <!-- SECTION 3 -->
 <div class="subsection">
-<div class="subsection-header">Data Sampling & Transformation for Visualization</div>
+<div class="subsection-header">Data Sampling & Time to Unicorn Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>
@@ -475,22 +475,27 @@ memory usage: 84.0+ KB
     .max()
     .sort_values(ascending=False)
   )
+  # Create bar plot
+  plt.figure()  # Initializing a new figure
 
-  # Create 'Valuation' column (string -> numeric)
-  companies_sampled['Valuation_numeric'] = (
-    companies_sampled['Valuation']
-    .str.replace('$', '', regex=False)   # Remove $ sign
-    .str.replace('B', '', regex=False)   # Remove B sign
-    .astype(float) * 1e9                 # Convert billions -> actual value
-  )
+  # Industry names (x), max times (y)
+  plt.bar(industry_max.index, industry_max.values)
 
-  # Aggregate max valuation by <code>Industry</code>
-  industry_max_val = (
-    companies_sampled
-    .groupby('Industry')['valuation_numeric']
-    .max()
-    .sort_values(ascending=False)        # Better visualization
-  )
+  # Rotating X-axis labels for readability
+  plt.xticks(rotation=45, ha='right')
+
+  # Axis labels
+  plt.xlabel('Industry')
+  plt.ylabel('Longest Time to Unicorn (Years)')
+
+  # Chart title
+  plt.title('Longest Time to Reach Unicorn Status by Industry (Sample)')
+
+  # Prevent label cutoff
+  plt.tight_layout()
+
+  # Plot 
+  plt.show()
 </pre></details>
 
 </div>
@@ -501,10 +506,49 @@ memory usage: 84.0+ KB
 </div>
 <!-- SECTION 4 -->
 <div class="subsection">
-<div class="subsection-header">Visualization</div>
+<div class="subsection-header">Maximum Valuation by Industry Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<details><summary>View Code</summary><pre>
+    # Create 'Valuation' column (string -> numeric)
+    companies_sampled['Valuation_numeric'] = (
+    companies_sampled['Valuation']
+    .str.replace('$', '', regex=False)   # Remove $ sign
+    .str.replace('B', '', regex=False)   # Remove B sign
+    .astype(float) * 1e9                 # Convert billions -> actual value
+    )
+
+    # Aggregate max valuation by <code>Industry</code>
+    industry_max_val = (
+      companies_sampled
+      .groupby('Industry')['valuation_numeric']
+      .max()
+      .sort_values(ascending=False)        # Better visualization
+    )
+
+
+    # Bar Plot
+    plt.figure()
+  
+    # Plot industries vs their max valuation
+    plt.bar(industry_max_val.index, industry_max_val.values)
+  
+    # Improve x-axis readability
+    plt.xticks(rotation=45, ha='right')
+
+    # labels and title
+    plt.xlabel('Industry')
+    plt.ylabel('Manimum Valuation (USD)')
+
+    # Chart title
+    plt.title('Maximum Unicorn Valuation by Industry (Sample)')
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Plot
+    plt.show()
+  </pre></details>
 <div class="results"><p>[Results here]</p></div>
 </div>
 </div>
