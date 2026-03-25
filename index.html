@@ -528,6 +528,7 @@ mix-blend-mode:normal;
 <div class="subsection-header">Maximum Valuation by Industry Visualization</div>
 <div class="subsection-content">
 <p>The <code>Valuation</code> column, originally stored as a string, is cleaned and converted into a numeric format. The dollar sign and 'B' suffix are removed and the values are cast to <code>float</code> before being scaled using <code>1e9</code> to represent actual dollar amounts.</p>
+<p>In this phase of the analysis the data is grouped by <code>Industry</code>, and maximum valuation is calculated for each group using the new numeric valuation column identifying the highest valued company within each industry. Aggregated values are sorted in descending order for readability before plotting.</p>
 <details><summary>View Code</summary><pre> 
     # Create 'Valuation' column (string -&gt; numeric)
     companies_sampled['Valuation_numeric'] = (
@@ -581,7 +582,7 @@ mix-blend-mode:normal;
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
-<div class="summary-content"><p>[Text Here]</p></div>
+<div class="summary-content"><p>Technology driven industries dominate maximum unicorn valuations within this sample, further suggesting that high-value companies are likely driven by factors like rapid innovation and scalability.</p></div>
 </div>
 </div>
 </div>
