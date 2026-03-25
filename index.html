@@ -456,12 +456,42 @@ memory usage: 84.0+ KB
 </div>
 <!-- SECTION 3 -->
 <div class="subsection">
-<div class="subsection-header">Statistical &amp; Aggregation Analysis</div>
+<div class="subsection-header">Data Sampling & Transformation for Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
-<details><summary>View Code</summary><pre>groupby()
-sum()
-sort_values()</pre></details>
+<details><summary>View Code</summary><pre>
+  # Data Sampling
+  companies_sample = companies.sample(n = 50, random_state = 42)
+
+  # Time to unicorn data
+  companies_sampled['time_to_unicorn'] = (
+    companies_sampled['Date Joined'].dt.year - companies_sampled['Year Founded']
+  )
+
+  # Aggregate data by Industry
+  industry_max = (
+    companies_sampled
+    .groupby('Industry')['time_to_unicorn']
+    .max()
+    .sort_values(ascending=False)
+  )
+
+  # Create 'Valuation' column (string -> numeric)
+  companies_sampled['Valuation_numeric'] = (
+    companies_sampled['Valuation']
+    .str.replace('$', '', regex=False)   # Remove $ sign
+    .str.replace('B', '', regex=False)   # Remove B sign
+    .astype(float) * 1e9                 # Convert billions -> actual value
+  )
+
+  # Aggregate max valuation by Industry
+  industry_max_val = (
+    companies_sampled
+    .groupby('Industry')['valuation_numeric']
+    .max()
+    .sort_values(ascending=False)        # Better visualization
+  )
+</pre></details>
 <div class="results"><p>[Results here]</p></div>
 </div>
 </div>
