@@ -484,7 +484,7 @@ memory usage: 84.0+ KB
     .astype(float) * 1e9                 # Convert billions -> actual value
   )
 
-  # Aggregate max valuation by Industry
+  # Aggregate max valuation by <code>Industry</code>
   industry_max_val = (
     companies_sampled
     .groupby('Industry')['valuation_numeric']
