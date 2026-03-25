@@ -456,7 +456,7 @@ memory usage: 84.0+ KB
 </div>
 <!-- SECTION 3 -->
 <div class="subsection">
-<div class="subsection-header">Data Sampling & Time to Unicorn Visualization</div>
+<div class="subsection-header">Data Sampling &amp; Time to Unicorn Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>
@@ -498,8 +498,7 @@ memory usage: 84.0+ KB
 
   # Plot 
   plt.show()
-</pre></details>
-
+</pre></details><div class="results"><img src="time_to_unicorn.png" style="width:100%; border-radius:6px; margin-top:10px;"/></div>
 </div>
 </div>
 <div class="subsection-summary">
@@ -512,12 +511,12 @@ memory usage: 84.0+ KB
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>
-    # Create 'Valuation' column (string -> numeric)
+    # Create 'Valuation' column (string -&gt; numeric)
     companies_sampled['Valuation_numeric'] = (
       companies_sampled['Valuation']
       .str.replace('$', '', regex=False)   # Remove $ sign
       .str.replace('B', '', regex=False)   # Remove B sign
-      .astype(float) * 1e9                 # Convert billions -> actual value
+      .astype(float) * 1e9                 # Convert billions -&gt; actual value
     )
 
     # Aggregate max valuation by <code>Industry</code>
@@ -551,7 +550,7 @@ memory usage: 84.0+ KB
     # Plot
     plt.show()
   </pre></details>
-<div class="results"><p>[Results here]</p></div>
+<div class="results"><img src="max_valuation_by_industry.png" style="width:100%; border-radius:6px; margin-top:10px;"/></div>
 </div>
 </div>
 <div class="subsection-summary">
