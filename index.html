@@ -418,11 +418,15 @@ memory usage: 84.0+ KB
 <div class="subsection-content">
 <p>For this part of the analysis, the data is prepared by converting date fileds to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
 <details><summary>View Code</summary><pre>
-  # Convert to datetime (<code>companies.info()</code> to check)
+  # Convert to datetime
   companies['Date Joined'] = pd.to_datetime(companies['Date Joined'])
+  # Checking
+  companies.info()
 
-  # Creating 'Year Joined' column (<code>companies.head(5)</code> to check)
+  # Creating 'Year Joined' column
   companies['Year Joined'] = companies['Date Joined'].dt.year
+  # Checking
+  companies.head(5)
 </p></pre></details>
 
 <div class="results">
@@ -512,7 +516,7 @@ dtypes: datetime64, int64(1), object(8)
 memory usage: 84.0+ KB
   </pre>
 
-  <h4 class="results-header"><code>Creating 'Year Joined' column</code></h4>
+  <h4 class="results-header"><code>Creating 'Year Joined' column (on the right side)</code></h4>
 
   <div style="overflow-x:auto;">
     <table class="df-table enhanced">
