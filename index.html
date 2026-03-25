@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Unicorn Company Analysis</title>
-
 <style>
 body {
   margin: 0;
@@ -226,7 +226,6 @@ details summary {
 }
 
 </style>
-
 <style>
 .results-header {
   margin-top: 10px;
@@ -246,28 +245,21 @@ details summary {
   padding: 6px 8px;
 }
 </style>
-
 </head>
-
 <body>
 <div class="container">
-
 <div style="margin-bottom:20px;">
-  <a href="https://shadyeggs.github.io/" class="back-link">
+<a class="back-link" href="https://shadyeggs.github.io/">
     ← Back to Portfolio
   </a>
 </div>
-
 <h1>Unicorn Company Analysis (EDA with Python)</h1>
-
-
 <div class="controls" style="gap:10px; align-items:center;">
-  <button id="toggleBtn" onclick="toggleAll()">Expand all</button>
-  <button id="modeBtn" onclick="toggleMode()">Day Mode</button>
-
-  <a href="https://github.com/ShadyEggs/Unicorn-Company-Analysis" target="_blank" style="display:flex; align-items:center;">
-    <svg height="22" width="22" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 
+<button id="toggleBtn" onclick="toggleAll()">Expand all</button>
+<button id="modeBtn" onclick="toggleMode()">Day Mode</button>
+<a href="https://github.com/ShadyEggs/Unicorn-Company-Analysis" style="display:flex; align-items:center;" target="_blank">
+<svg fill="currentColor" height="22" viewbox="0 0 16 16" width="22">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 
       6.53 5.47 7.59.4.07.55-.17.55-.38 
       0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94
       -.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
@@ -282,37 +274,31 @@ details summary {
       0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
       1.48 0 1.07-.01 1.93-.01 2.2 
       0 .21.15.46.55.38A8.013 8.013 0 
-      0 0 16 8c0-4.42-3.58-8-8-8z"/>
-    </svg>
-  </a>
+      0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
 </div>
-
-
 <h2>Project Background</h2>
 <div class="collapsible-content">
-  <p>The data used for this project provides information on over 1,000 unicorn companies, companies valued at over one billion dollars. Features in this dataset for each company include, among others, their industry, country, year founded, and select investors. When and how these companies reached unicorn status, a prestigious milestone, can provide valuable insight for investing firms, for example, when deciding which companies to invest in next.  </p>
+<p>The data used for this project provides information on over 1,000 unicorn companies, companies valued at over one billion dollars. Features in this dataset for each company include, among others, their industry, country, year founded, and select investors. When and how these companies reached unicorn status, a prestigious milestone, can provide valuable insight for investing firms, for example, when deciding which companies to invest in next.  </p>
 </div>
-
 <h2>Project Goal</h2>
 <div class="collapsible-content">
-  <p>The objective of this project will be to analyze unicorn company data to understand how valuation and growth timelines vary across industries, and generate insights to support investment decision-making.</p>
+<p>The objective of this project will be to analyze unicorn company data to understand how valuation and growth timelines vary across industries, and generate insights to support investment decision-making.</p>
 </div>
-
 <div class="section">
 <h2>Technical Implementation</h2>
 <div class="collapsible-content">
-
 <!-- SECTION 1 -->
 <div class="subsection">
-<div class="subsection-header">Data Loading & Inspection</div>
+<div class="subsection-header">Data Loading &amp; Inspection</div>
 <div class="subsection-content">
 <p>Loading <code>Unicorn_Companies.csv</code></p>
 <p><code>matplotlib</code> - used for data visualization</p>
 <p><code>Pandas</code> - used to manipulate, structure, and handle the data</p>
-
 <p><strong>note</strong></p>
   Datetime operations were performed using pandas' built-in datetime tools (<code>pd.to_datetime, .dt)</code> without relying on Python's standalone datetime module.
-<p></p>  
+<p></p>
 <p></p>
 <p>Loading the dataset and performing an initial inspection to understand structure, size, and data types using pandas.</p>
 <details><summary>View Code</summary><pre>
@@ -332,38 +318,33 @@ companies.describe()  # Descriptive statistics
 </pre></details>
 <div class="results">
 <div class="results">
-
-  <h4 class="results-header"><code>companies.head(5)</code></h4>
-
-  <div style="overflow-x:auto;">
-    <table class="df-table enhanced">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Company</th><th>Valuation</th><th>Date Joined</th>
-          <th>Industry</th><th>City</th><th>Country/Region</th>
-          <th>Continent</th><th>Year Founded</th><th>Funding</th>
-          <th>Select Investors</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
-        <tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
-        <tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
-        <tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
-        <tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4 class="results-header"><code>companies.shape</code></h4>
-  <pre>(1074, 10)</pre>
-
-  <h4 class="results-header"><code>companies.size</code></h4>
-  <pre>10740</pre>
-
-  <h4 class="results-header"><code>companies.info()</code></h4>
-  <pre>
+<h4 class="results-header"><code>companies.head(5)</code></h4>
+<div style="overflow-x:auto;">
+<table class="df-table enhanced">
+<thead>
+<tr>
+<th></th>
+<th>Company</th><th>Valuation</th><th>Date Joined</th>
+<th>Industry</th><th>City</th><th>Country/Region</th>
+<th>Continent</th><th>Year Founded</th><th>Funding</th>
+<th>Select Investors</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>4/7/17</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>12/1/12</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>7/3/18</td><td>E-commerce</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>1/23/14</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>12/12/11</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td></tr>
+</tbody>
+</table>
+</div>
+<h4 class="results-header"><code>companies.shape</code></h4>
+<pre>(1074, 10)</pre>
+<h4 class="results-header"><code>companies.size</code></h4>
+<pre>10740</pre>
+<h4 class="results-header"><code>companies.info()</code></h4>
+<pre>
 &lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 1074 entries, 0 to 1073
 Data columns (total 10 columns):
@@ -382,27 +363,24 @@ Data columns (total 10 columns):
 dtypes: int64(1), object(9)
 memory usage: 84.0+ KB
   </pre>
-
 <h4 class="results-header"><code>companies.describe()</code></h4>
-
-  <div style="overflow-x:auto;">
-    <table class="df-table enhanced">
-      <thead>
-        <tr><th></th><th>Year Founded</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>count</td><td>1074.000000</td></tr>
-        <tr><td>mean</td><td>2012.895717</td></tr>
-        <tr><td>std</td><td>5.698573</td></tr>
-        <tr><td>min</td><td>1919.000000</td></tr>
-        <tr><td>25%</td><td>2011.000000</td></tr>
-        <tr><td>50%</td><td>2014.000000</td></tr>
-        <tr><td>75%</td><td>2016.000000</td></tr>
-        <tr><td>max</td><td>2021.000000</td></tr>
-      </tbody>
-    </table>
-  </div>
-
+<div style="overflow-x:auto;">
+<table class="df-table enhanced">
+<thead>
+<tr><th></th><th>Year Founded</th></tr>
+</thead>
+<tbody>
+<tr><td>count</td><td>1074.000000</td></tr>
+<tr><td>mean</td><td>2012.895717</td></tr>
+<tr><td>std</td><td>5.698573</td></tr>
+<tr><td>min</td><td>1919.000000</td></tr>
+<tr><td>25%</td><td>2011.000000</td></tr>
+<tr><td>50%</td><td>2014.000000</td></tr>
+<tr><td>75%</td><td>2016.000000</td></tr>
+<tr><td>max</td><td>2021.000000</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -411,10 +389,9 @@ memory usage: 84.0+ KB
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>[Text Here]</p></div>
 </div>
-
 <!-- SECTION 2 -->
 <div class="subsection">
-<div class="subsection-header">Data Preparation & Feature Engineering</div>
+<div class="subsection-header">Data Preparation &amp; Feature Engineering</div>
 <div class="subsection-content">
 <p>For this part of the analysis, the data is prepared by converting <code>Date Joined</code> to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
 <details><summary>View Code</summary><pre>
@@ -427,13 +404,11 @@ memory usage: 84.0+ KB
   companies['Year Joined'] = companies['Date Joined'].dt.year
   # Checking
   companies.head(5)
-</p></pre></details>
-
+</pre></details>
 <div class="results">
-
-  <h4 class="results-header"><code>Convert to datetime</code></h4>
-  <pre>
-<class 'pandas.core.frame.DataFrame'>
+<h4 class="results-header"><code>Convert to datetime</code></h4>
+<pre>
+<class 'pandas.core.frame.dataframe'="">
 RangeIndex: 1074 entries, 0 to 1073
 Data columns (total 10 columns):
  #   Column            Non-Null Count  Dtype         
@@ -450,96 +425,71 @@ Data columns (total 10 columns):
  9   Select Investors  1073 non-null   object        
 dtypes: datetime64, int64(1), object(8)
 memory usage: 84.0+ KB
-  </pre>
-
-  <h4 class="results-header"><code>Creating 'Year Joined' column (to the right)</code></h4>
-
-  <div style="overflow-x:auto;">
-    <table class="df-table enhanced">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Company</th><th>Valuation</th><th>Date Joined</th>
-          <th>Industry</th><th>City</th><th>Country/Region</th>
-          <th>Continent</th><th>Year Founded</th><th>Funding</th>
-          <th>Select Investors</th><th>Year Joined</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>0</td><td>Bytedance</td><td>$180B</td><td>2017-04-07</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td><td>2017</td></tr>
-        <tr><td>1</td><td>SpaceX</td><td>$100B</td><td>2012-12-01</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td><td>2012</td></tr>
-        <tr><td>2</td><td>SHEIN</td><td>$100B</td><td>2018-07-03</td><td>E-commerce & direct-to-consumer</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td><td>2018</td></tr>
-        <tr><td>3</td><td>Stripe</td><td>$95B</td><td>2014-01-23</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td><td>2014</td></tr>
-        <tr><td>4</td><td>Klarna</td><td>$46B</td><td>2011-12-12</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td><td>2011</td></tr>
-      </tbody>
-    </table>
-  </div>
-
+  </class></pre>
+<h4 class="results-header"><code>Creating 'Year Joined' column (to the right)</code></h4>
+<div style="overflow-x:auto;">
+<table class="df-table enhanced">
+<thead>
+<tr>
+<th></th>
+<th>Company</th><th>Valuation</th><th>Date Joined</th>
+<th>Industry</th><th>City</th><th>Country/Region</th>
+<th>Continent</th><th>Year Founded</th><th>Funding</th>
+<th>Select Investors</th><th>Year Joined</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Bytedance</td><td>$180B</td><td>2017-04-07</td><td>Artificial intelligence</td><td>Beijing</td><td>China</td><td>Asia</td><td>2012</td><td>$8B</td><td>Sequoia Capital China...</td><td>2017</td></tr>
+<tr><td>1</td><td>SpaceX</td><td>$100B</td><td>2012-12-01</td><td>Other</td><td>Hawthorne</td><td>United States</td><td>North America</td><td>2002</td><td>$7B</td><td>Founders Fund...</td><td>2012</td></tr>
+<tr><td>2</td><td>SHEIN</td><td>$100B</td><td>2018-07-03</td><td>E-commerce &amp; direct-to-consumer</td><td>Shenzhen</td><td>China</td><td>Asia</td><td>2008</td><td>$2B</td><td>Tiger Global...</td><td>2018</td></tr>
+<tr><td>3</td><td>Stripe</td><td>$95B</td><td>2014-01-23</td><td>Fintech</td><td>San Francisco</td><td>United States</td><td>North America</td><td>2010</td><td>$2B</td><td>Khosla Ventures...</td><td>2014</td></tr>
+<tr><td>4</td><td>Klarna</td><td>$46B</td><td>2011-12-12</td><td>Fintech</td><td>Stockholm</td><td>Sweden</td><td>Europe</td><td>2005</td><td>$4B</td><td>Institutional Venture...</td><td>2011</td></tr>
+</tbody>
+</table>
 </div>
-
+</div>
 </div>
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>[Text Here]</p></div>
 </div>
-
 <!-- SECTION 3 -->
 <div class="subsection">
-<div class="subsection-header">Statistical & Aggregation Analysis</div>
+<div class="subsection-header">Statistical &amp; Aggregation Analysis</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>groupby()
 sum()
 sort_values()</pre></details>
-
-<div class="results">
-
-<p>[Results here]</p>
-
-</div>
-
-</div>
-
+<div class="results"><p>[Results here]</p></div>
 </div>
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>[Text Here]</p></div>
 </div>
-
 <!-- SECTION 4 -->
 <div class="subsection">
 <div class="subsection-header">Visualization</div>
 <div class="subsection-content">
 <p>[Text Here]</p>
 <details><summary>View Code</summary><pre>[Code Here]</pre></details>
-
-<div class="results">
-
-<p>[Results here]</p>
-
-</div>
-
-</div>
-
+<div class="results"><p>[Results here]</p></div>
 </div>
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>[Text Here]</p></div>
 </div>
-
 </div>
 </div>
-
 <div class="section">
 <h2 id="project-overview" style="padding-left:0; cursor:default;">Project Overview</h2>
 <div class="collapsible-content">
 <p>[Text Here]</p>
 </div>
 </div>
-
 <script>
 let expanded = false;
 
@@ -610,11 +560,9 @@ function toggleMode() {
 }
 
 </script>
-
 <footer style="margin-top:40px; text-align:center; color:#777;">
 © 2026 Alfred Rico
 </footer>
-
 </div>
 </body>
 </html>
