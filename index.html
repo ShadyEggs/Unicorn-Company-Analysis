@@ -527,8 +527,8 @@ mix-blend-mode:normal;
 <div class="subsection">
 <div class="subsection-header">Maximum Valuation by Industry Visualization</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
-<details><summary>View Code</summary><pre>
+<p>The <code>Valuation</code> column, originally stored as a string, is cleaned and converted into a numeric format. The dollar sign and 'B' suffix are removed and the values are cast to <code>float</code> before being scaled using <code>1e9</code> to represent actual dollar amounts.</p>
+<details><summary>View Code</summary><pre> 
     # Create 'Valuation' column (string -&gt; numeric)
     companies_sampled['Valuation_numeric'] = (
       companies_sampled['Valuation']
