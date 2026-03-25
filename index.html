@@ -394,6 +394,7 @@ memory usage: 84.0+ KB
   <p><code>companies.describe()</code> highlights both outliers and recent unicorn formation trends in a <code>Year Founded</code> distribution. Immediately noticeable is the minimum value of 1919 signaling a clear outlier, suggesting the presence of a legacy company that likely achieved unicorn status much later or reflects a data irregularity. In contrast, a maximium of 2021, when compared to the median (2014) and 75th percentile (2016), strongly indicates that some companies are reaching unicorn status significantly faster.</p> 
 </p></div>
 </div>
+  
 <!-- SECTION 2 -->
 <div class="subsection">
 <div class="subsection-header">Datetime Conversion &amp; Feature Engineering</div>
@@ -460,6 +461,7 @@ memory usage: 84.0+ KB
 <div class="summary-content"><p>Highlighted during the preliminary analysis, the <code>Date Joined</code> column is converted from an object type to a datetime format, supporting more effective time-based analysis. A quick verification using <code>companies.info()</code> confirms that the conversion was successfully applied.</p></div>
   <p><strong><code>Year Joined</code></strong>, a new feature, is engineered by extracting the year component from the datetime column. Comparisons between when companies were founded and when they achieved unicorn status is simplified with this transformation, further supporting trend analysis and visualization.</p>
 </div>
+</div> 
   
 <!-- SECTION 3 -->
 <div class="subsection">
