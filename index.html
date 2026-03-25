@@ -297,6 +297,8 @@ details summary {
 <p><code>matplotlib</code> - used for data visualization</p>
 <p><code>Pandas</code> - used to manipulate, structure, and handle the data</p>
 <p><strong>note</strong></p>
+  Datetime operations were performed using pandas' built-in datetime tools (<code>pd.to_datetime, .dt)</code> without relying on Python's standalone datetime module.
+<p></p>
 <p></p>
 <p>Loading the dataset and performing an initial inspection to understand structure, size, and data types using pandas.</p>
 <details><summary>View Code</summary><pre>
@@ -385,20 +387,13 @@ memory usage: 84.0+ KB
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
-<div class="summary-content">
-  <p><code>companies.head(5)</code> provides an initial snapshot of the dataset’s structure and key features. Of particular relevance to the project objective is the <code>Date Joined</code> column, which captures the date each company reached unicorn status (valuation ≥ $1B). This field will be especially important for temporal analysis, as its year component can be extracted to examine trends in how quickly companies achieve unicorn status across industries.</p>
-  <p><code>companies.size</code> reveals there are 10,740 total data points, an important distinction from the analysis <code>companies.shape</code> provides (1074 rows, 10 columns).</p>
-  <p><code>companies.info()</code> dataset reveals a few details that standout immediately upon inspection. Firstly, there are 1074 entries and 10 columns, and unfortunately, 9 of those 10 columns are object types with one column housing a numerical feature (Year Founded). It is likely that columns like Funding and Valuation will need to be converted to numerical and others like Date Joined will need to be converted to a datetime format. It also appears that there are NULL values present in two columns, 16 in the City column and 1 in the Select Investors column representing less than 2% of the overall data. The dataset is small but with over 1000 entries, still usable and reliable for analysis.</p>
-  <p><code>companies.describe()</code> highlights both outliers and recent unicorn formation trends in a <code>Year Founded</code> distribution. Immediately noticeable is the minimum value of 1919 signaling a clear outlier, suggesting the presence of a legacy company that likely achieved unicorn status much later or reflects a data irregularity. In contrast, a maximium of 2021, when compared to the median (2014) and 75th percentile (2016), strongly indicates that some companies are reaching unicorn status significantly faster.</p>
-  <div>
+<div class="summary-content"><p>[Text Here]</p></div>
 </div>
 <!-- SECTION 2 -->
 <div class="subsection">
 <div class="subsection-header">Data Preparation &amp; Feature Engineering</div>
 <div class="subsection-content">
 <p>For this part of the analysis, the data is prepared by converting <code>Date Joined</code> to datetime format, extracting the year component, and engineerin a <code>Year Joined</code> feature to support a time-based analysis.</p>
-  <p>Datetime operations were performed using pandas' built-in datetime tools (<code>pd.to_datetime, .dt)</code> without relying on Python's standalone datetime module.
-  </p>
 <details><summary>View Code</summary><pre>
   # Convert to datetime
   companies['Date Joined'] = pd.to_datetime(companies['Date Joined'])
