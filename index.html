@@ -514,10 +514,10 @@ memory usage: 84.0+ KB
 <details><summary>View Code</summary><pre>
     # Create 'Valuation' column (string -> numeric)
     companies_sampled['Valuation_numeric'] = (
-    companies_sampled['Valuation']
-    .str.replace('$', '', regex=False)   # Remove $ sign
-    .str.replace('B', '', regex=False)   # Remove B sign
-    .astype(float) * 1e9                 # Convert billions -> actual value
+      companies_sampled['Valuation']
+      .str.replace('$', '', regex=False)   # Remove $ sign
+      .str.replace('B', '', regex=False)   # Remove B sign
+      .astype(float) * 1e9                 # Convert billions -> actual value
     )
 
     # Aggregate max valuation by <code>Industry</code>
