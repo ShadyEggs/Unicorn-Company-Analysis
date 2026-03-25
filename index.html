@@ -421,8 +421,8 @@ memory usage: 84.0+ KB
   # Convert to datetime (<code>companies.info()</code> to check)
   companies['Date Joined'] = pd.to_datetime(companies['Date Joined'])
 
-  # Creating 'Year Joined' column
-  companies['Year Joined'] = companies['Date Joined'].dt.year      # <code>companies.head(5)</code> again to check
+  # Creating 'Year Joined' column (<code>companies.head(5)</code> to check)
+  companies['Year Joined'] = companies['Date Joined'].dt.year
 </p></pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
