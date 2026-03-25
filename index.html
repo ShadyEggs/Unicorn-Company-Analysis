@@ -464,7 +464,10 @@ memory usage: 84.0+ KB
 <div class="subsection">
 <div class="subsection-header">Data Sampling &amp; Time to Unicorn Visualization</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
+<p>Analysis shifts focus to visualization for which a sample of 50 unicorn companies randomly selected, using the <code>companies.sample()</code> function, is taken from the dataset, scpecifying the <code>random_stae</code> parameter for reproducibility.</p>
+<p><code>time_to_unicorn</code> is created by subtracting <code>Year Founded</code> from the year component of <coded>Date Joined</coded></p>
+<p>Grouped by <code>Industry</code>, maximum <code>time_to_unicorn</code> is calculated for each group, sorted in descending order to make comparisons and highlight industries with the longest timelines.</p>
+<p>A bar chart is created using <code>matplotlib</code>, plotting industries on the x-axis and their corresponding maximum time to unicorn on the y-axis. Labels are rotated for readability and the layout is adjusted to prevent overlap.</p>
 <details><summary>View Code</summary><pre>
   # Data Sampling
   companies_sample = companies.sample(n = 50, random_state = 42)
