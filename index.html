@@ -230,6 +230,7 @@ details summary {
 <style>
 .results-header {
   margin-top: 10px;
+  margin-top: 10px;
   font-size: 1.05rem;
   font-weight: 600;
   margin-top: 18px;
@@ -332,7 +333,7 @@ companies.describe()  # Descriptive statistics
 <div class="results">
 <div class="results">
 
-  <h4 class="results-header">Data Preview (head)</h4>
+  <h4 class="results-header"><code>companies.head(5)</code></h4>
 
   <div style="overflow-x:auto;">
     <table class="df-table enhanced">
@@ -355,13 +356,13 @@ companies.describe()  # Descriptive statistics
     </table>
   </div>
 
-  <h4 class="results-header">Dataset Shape</h4>
+  <h4 class="results-header"><code>companies.shape</code></h4>
   <pre>(1074, 10)</pre>
 
-  <h4 class="results-header">Dataset Size</h4>
+  <h4 class="results-header"><code>companies.size</code></h4>
   <pre>10740</pre>
 
-  <h4 class="results-header">Dataset Info</h4>
+  <h4 class="results-header"><code>companies.info()</code></h4>
   <pre>
 &lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 1074 entries, 0 to 1073
